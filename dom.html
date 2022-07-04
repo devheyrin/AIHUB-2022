@@ -4,14 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script>
-    // html 요소 선택
-    document.getElementsByTagName('body');
-    // html 요소 생성 
-    document.createElement('p');
-  </script>
 </head>
 <body>
+  <ul>
+    <li id="hi">hi</li>
+  </ul>
   
+  <script>
+    // 아이디가 hi인 요소를 선택 
+    let $hi = document.getElementById('hi');
+    console.log($hi);
+    // 아이디가 id인 요소의 색상을 변경 
+    $hi.style.color = 'red';
+    // 아이디가 id인 요소의 내용을 변경 
+    $hi.innerHTML = 'hey';
+  </script>
 </body>
 </html>
