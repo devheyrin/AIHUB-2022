@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" id="color-change" value="변경">
+  <script>
+    let $color_change_button = document.querySelector("#color-change");
+    let bgcolor = 'powderblue';
+
+    // 처음 배경색상 지정 
+    window.onload = function() {
+      document.body.style.backgroundColor = bgcolor;   
+    };
+
+    // 배경색상 변경 
+    $color_change_button.addEventListener('click', () => {
+      if (bgcolor === 'powderblue') {
+        document.body.style.backgroundColor = "blue";
+        bgcolor = 'blue';
+      } else {
+        document.body.style.backgroundColor = "powderblue";
+        bgcolor = 'powderblue';
+      }
+    });
+  </script>
+</body>
+</html>
