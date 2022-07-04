@@ -19,14 +19,21 @@
     let $result1 = document.querySelector("#result1");
     let $result2 = document.querySelector("#result2");
 
+    // $input1.onchange = function() {
+    //   let input1 = this.value;
+    //   $result1.innerHTML = input1;
+    // };
 
-    $input1.onchange = function() {
-      let input1 = this.value;
+    $input1.onchange = (event) => {
+      console.log(event)
+      let input1 = event.target.value;
+
       $result1.innerHTML = input1;
-    };
-    
-    $input2.addEventListener('change', (event) => {
-      let input2 = event.value;
+    }    
+
+
+    $input2.addEventListener('change', function() {
+      let input2 = this.value;
       $result2.innerHTML = input2;
     });
 
