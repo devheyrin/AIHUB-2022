@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="number" id="num1"> + 
+  <input type="number" id="num2"> = 
+  <input type="number" id="result" disabled>
+  <input type="button" id="button" value="결과 보기">
+  <input type="button" id="remove" value="초기화">
+  <script>
+    let $num1 = document.querySelector('#num1');
+    let $num2 = document.querySelector('#num2');
+    let $result = document.querySelector('#result');
+    let $button = document.querySelector('#button');
+    let $remove = document.querySelector('#remove');
+    
+    $button.addEventListener('click', () => {
+      let num1 = $num1.value;
+      let num2 = $num2.value;
+      let result = (+num1) + (+num2);
+      $result.value = result;
+    });
+
+    $remove.addEventListener('click', () => {
+      $num1.value = "";
+      $num2.value = "";
+      $result.value = "";
+    });
+    
+  </script>
+</body>
+</html>
