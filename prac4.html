@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <span>함수형</span> <input type="text" id="input1"><br>
+  <div id="result1"></div>
+  <hr>
+  <span>이벤트리스너</span> <input type="text" id="input2"><br>
+  <div id="result2"></div>
+
+
+  <script>
+    let $input1 = document.querySelector("#input1");
+    let $input2 = document.querySelector("#input2");
+    let $result1 = document.querySelector("#result1");
+    let $result2 = document.querySelector("#result2");
+
+
+    $input1.onchange = function() {
+      let input1 = this.value;
+      $result1.innerHTML = input1;
+    };
+    
+    $input2.addEventListener('change', (event) => {
+      let input2 = event.value;
+      $result2.innerHTML = input2;
+    });
+
+  </script>
+</body>
+</html>
