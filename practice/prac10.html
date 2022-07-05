@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" id="arrow"value="화살표함수">
+  <input type="button" id="normal" value="일반함수">
+  <script>
+    let $arrow = document.querySelector('#arrow');
+    let $normal = document.querySelector('#normal');
+
+    let arrow = () => {
+      console.log(this); // window 객체 
+    }
+
+    $arrow.addEventListener('click', arrow);
+
+    $normal.addEventListener('click', function() {
+      console.log(this); // <input> 
+    });
+
+  </script>
+  
+</body>
+</html>
