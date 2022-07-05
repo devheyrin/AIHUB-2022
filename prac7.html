@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="number" id="number">
+  <input type="button" id="plus" value="+">
+  <input type="button" id="minus" value="-">
+  <script>
+    let $number = document.querySelector('#number');
+    let $plus = document.querySelector('#plus');
+    let $minus = document.querySelector('#minus');
+
+    $plus.addEventListener('click', function() {
+      let number = $number.value;
+      $number.value = parseInt(number) + 1;
+    });
+
+    $minus.addEventListener('click', function() {
+      let number = $number.value;
+      if (number != 1) {
+        $number.value = parseInt(number) - 1;
+      } else {
+        return
+      }
+    });
+
+  </script>
+  
+</body>
+</html>
