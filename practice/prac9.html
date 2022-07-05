@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1>MENU</h1>
+    <form id="form" method="post">
+      <ul>
+        <li><input type="checkbox" name="chicken"><label>치킨</label></li>
+        <li><input type="checkbox" name="pizza"><label>피자</label></li>
+        <li><input type="checkbox" name="pasta"><label>파스타</label></li>
+      </ul>
+      <input type="submit" id="button" value="결과 보기">
+    </form>
+    <div id="result"></div>
+  </div>
+  <script>
+    let $form = document.querySelector('#form');
+    let $menus = document.querySelectorAll('li input');
+    let $result = document.querySelector('#result');
+
+    $form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      $result.innerHTML = "";
+      for (let menu of $menus) {
+        if (menu.checked) {
+          console.log(menu);
+          let result = menu.nextElementSibling.textContent;
+          console.log(result);
+          $result.append(result, document.createElement('br'));
+          menu.checked = false;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
