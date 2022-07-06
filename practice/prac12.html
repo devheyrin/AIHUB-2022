@@ -11,7 +11,9 @@
   <script>
     const o = {
       name: "Kim",
-      changeMyName: function (name) { this.name = name },
+      changeMyName: function (name) { 
+        console.log(this);
+        this.name = name },
     };
 
     const o2 = {
@@ -25,12 +27,12 @@
       console.log(o);
     }
 
-    o.changeMyName.bind(o2)("Sam");
-    console.log("1번 - ", o2.name); // Sam
+    // o.changeMyName.bind(o2)("Sam");
+    // console.log("1번 - ", o2.name); // Sam
     callFuncWithArg(o.changeMyName, "Daniel");
     console.log("2번 - ", o.name); // Kim
-    o.changeMyName("Sam");
-    console.log("3번 - ", o.name); // Sam
+    // o.changeMyName("Sam");
+    // console.log("3번 - ", o.name); // Sam
   </script>
 </body>
 
