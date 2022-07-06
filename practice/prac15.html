@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let ab1 = function () {
+    //   console.log(this); 
+    // }
+    // ab1(); // this : window
+
+    // let binded = ab1.bind(1);
+    // binded(); // this : Number{1}
+
+    // let ab2 = () => {
+    //   console.log(this);
+    // }
+    // ab2(); // this : window
+
+    // let binded2 = ab2.bind(1);
+    // binded2(); // this : window;
+
+    // function abc() {
+    //   console.log(this);
+    // }
+    // abc(); // this: window();
+
+    let o = {
+      o1 : function() {
+        console.log(this); // o
+      },
+      o2 : () => {
+        console.log(this); // window
+        let o3 = () => {
+          console.log(this); // window
+        }
+        o3();
+      },
+      o3 : function() {
+        console.log(this); // o
+        let o4 = () => {
+          console.log(this); // o
+        }
+        o4();
+      },
+      o4 : function() {
+        console.log(this); // o
+        let o5 = function() {
+          console.log(this); // window
+        }
+        o5();
+      }
+    }
+    o.o1();
+    o.o2();
+    o.o3();
+    o.o4();
+
+
+  </script>
+
+
+</body>
+
+</html>
